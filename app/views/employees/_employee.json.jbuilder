@@ -5,4 +5,9 @@ json.full_name employee.full_name
 json.birthday employee.birthday
 json.email employee.email
 json.ssn employee.ssn
-json.anything "yo!"
+json.addresses employee.addresses.each do |unicorn|
+    json.address unicorn.address
+    json.city unicorn.city
+    json.state unicorn.state
+    json.zip unicorn.zip
+  end
