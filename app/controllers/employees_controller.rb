@@ -17,4 +17,33 @@ class EmployeesController < ApplicationController
       )
     render 'show.json.jbuilder'
   end
+  def update
+    @employee = Employee.find_by(id: params[:id])
+    @employee.update(
+      first_name: params[:first_name] || @employee.first_name,
+      last_name: params[:last_name] || @employee.last_name,
+      birthday: params[:birthday] || @employee.birthday,
+      email: params[:email] || @employee.email,
+      ssn: params[:ssn] || @employee.ssn
+      )
+    render 'show.json.jbuilder'
+  end
+  def destroy
+    employee = Employee.find_by(id: params[:id])
+    employee.destroy
+    render json: { message: "Employee successfully destroyed!" }
+  end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
