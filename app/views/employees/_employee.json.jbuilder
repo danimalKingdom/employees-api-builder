@@ -5,3 +5,4 @@ json.full_name employee.full_name
 json.birthday employee.birthday
 json.email employee.email
 json.ssn employee.ssn
+json.anything "yo!"
